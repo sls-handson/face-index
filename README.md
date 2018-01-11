@@ -84,7 +84,9 @@ E:\workspaces\e.4.7.2\face-index>
 
 ## aws cli
 ```
-aws rekognition list-faces --collection-id rekognition-satoh-test-id --region us-east-1 --profile sls-handson
+aws rekognition create-collection --region us-east-1 --collection-id ${prefix}-rekognition --profile ${prefix}-sls-handson
+
+aws rekognition list-faces --collection-id ${prefix}-rekognition --region us-east-1 --profile ${prefix}-sls-handson
 {
     "Faces": [
         {
@@ -102,5 +104,5 @@ aws rekognition list-faces --collection-id rekognition-satoh-test-id --region us
     ]
 }
 
-aws rekognition delete-faces --collection-id rekognition-satoh-test-id --face-ids c9749b96-113e-4494-8867-fa5ba0d7872b --region us-east-1 --profile sls-handson
+aws rekognition delete-faces --collection-id ${prefix}-rekognition --face-ids c9749b96-113e-4494-8867-fa5ba0d7872b --region us-east-1 --profile ${prefix}-sls-handson
 ```
