@@ -66,7 +66,18 @@ E:\workspaces\e.4.7.2\face-index>
 ## Invoke
 ```
 E:\workspaces\e.4.7.2\face-index>sls invoke -f put -p event.json --no A001
-true
+{
+    "faceId": "5224adaf-36a2-45a8-94e8-49df9c2e863e",
+    "boundingBox": {
+        "width": 0.4091653,
+        "height": 0.5118456,
+        "left": 0.3717559,
+        "top": 0.14331676
+    },
+    "imageId": "6b31eaef-e3c7-51fd-97c0-6a6072d7d53f",
+    "externalImageId": "image3.jpg",
+    "confidence": 99.99857
+}
 
 E:\workspaces\e.4.7.2\face-index>
 ```
