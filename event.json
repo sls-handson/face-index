@@ -1,8 +1,8 @@
 {
     "userId": "satoh001",
-    "s3Key": "image3.jpg",
-    "s3Bucket": "rekognition-satoh-test3",
-    "collectionId": "rekognition-satoh-test-id",
+    "s3Key": "1_happy_face.jpg",
+    "s3Bucket": "stylez-sls-handson-rekognition",
+    "collectionId": "a001-rekognition",
     "detectedFaceDetails": {
         "boundingBox": {
             "width": 0.4091653,

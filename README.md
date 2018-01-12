@@ -3,17 +3,17 @@
 	mvn clean package -Dno=xxx
 	sls deploy --no xxx
 
-	e.g. sls deploy --no A001
+	e.g. sls deploy --no a001
 
 # Invoke
 
-	sls invoke -f put -p event.json --no A001
+	sls invoke -f put -p event.json --no a001
 
 
 # e.g.
 ## maven build
 ```
-E:\workspaces\e.4.7.2\face-index>mvn clean package -Dno=A001
+E:\workspaces\e.4.7.2\face-index>mvn clean package -Dno=a001
 [INFO] Scanning for projects...
 [INFO]
 [INFO] ------------------------------------------------------------------------
@@ -36,7 +36,7 @@ E:\workspaces\e.4.7.2\face-index>
 ```
 ## serverless deploy
 ```
-E:\workspaces\e.4.7.2\face-index>sls deploy --no A001
+E:\workspaces\e.4.7.2\face-index>sls deploy --no a001
 Serverless: Packaging service...
 Serverless: Creating Stack...
 Serverless: Checking Stack create progress...
@@ -50,22 +50,22 @@ Serverless: Checking Stack update progress...
 ...............
 Serverless: Stack update finished...
 Service Information
-service: A001-face-index
+service: a001-face-index
 stage: dev
 region: us-east-1
-stack: A001-face-index-dev
+stack: a001-face-index-dev
 api keys:
   None
 endpoints:
   None
 functions:
-  put: A001-face-index-dev-put
+  put: a001-face-index-dev-put
 
 E:\workspaces\e.4.7.2\face-index>
 ```
 ## Invoke
 ```
-E:\workspaces\e.4.7.2\face-index>sls invoke -f put -p event.json --no A001
+E:\workspaces\e.4.7.2\face-index>sls invoke -f put -p event.json --no a001
 {
     "faceId": "5224adaf-36a2-45a8-94e8-49df9c2e863e",
     "boundingBox": {
@@ -75,7 +75,7 @@ E:\workspaces\e.4.7.2\face-index>sls invoke -f put -p event.json --no A001
         "top": 0.14331676
     },
     "imageId": "6b31eaef-e3c7-51fd-97c0-6a6072d7d53f",
-    "externalImageId": "image3.jpg",
+    "externalImageId": "1_happy_face.jpg",
     "confidence": 99.99857
 }
 
@@ -84,9 +84,9 @@ E:\workspaces\e.4.7.2\face-index>
 
 ## aws cli
 ```
-aws rekognition create-collection --region us-east-1 --collection-id ${prefix}-rekognition --profile ${prefix}-sls-handson
+aws rekognition create-collection --region us-east-1 --collection-id ${prefix}-rekognition --profile sls-handson
 
-aws rekognition list-faces --collection-id ${prefix}-rekognition --region us-east-1 --profile ${prefix}-sls-handson
+aws rekognition list-faces --collection-id ${prefix}-rekognition --region us-east-1 --profile sls-handson
 {
     "Faces": [
         {
@@ -97,12 +97,12 @@ aws rekognition list-faces --collection-id ${prefix}-rekognition --region us-eas
                 "Height": 0.5118460059165955
             },
             "FaceId": "c9749b96-113e-4494-8867-fa5ba0d7872b",
-            "ExternalImageId": "image3.jpg",
+            "ExternalImageId": "1_happy_face.jpg",
             "Confidence": 99.99859619140625,
             "ImageId": "6b31eaef-e3c7-51fd-97c0-6a6072d7d53f"
         }
     ]
 }
 
-aws rekognition delete-faces --collection-id ${prefix}-rekognition --face-ids c9749b96-113e-4494-8867-fa5ba0d7872b --region us-east-1 --profile ${prefix}-sls-handson
+aws rekognition delete-faces --collection-id ${prefix}-rekognition --face-ids c9749b96-113e-4494-8867-fa5ba0d7872b --region us-east-1 --profile sls-handson
 ```
